@@ -1,6 +1,6 @@
 # puppet-teleport
 
-[![Build Status](https://travis-ci.org/jaxxstorm/puppet-teleport.svg?branch=master)](https://travis-ci.org/jaxxstorm/puppet-teleport)
+[![Build Status](https://git.bsstecnologia.com.br/edgium/puppet/edgium-modules/teleport/-/tree/main)](https://git.bsstecnologia.com.br/edgium/puppet/edgium-modules/teleport)
 
 #### Table of Contents
 

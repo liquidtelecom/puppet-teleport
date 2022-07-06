@@ -1,9 +1,8 @@
 Puppet::Type.type(:teleport_user).provide(:ruby) do
-
   desc 'Manage teleport users.'
 
   # FIXME: Use the bindir param here?
-  commands :tctl => 'tctl'
+  commands tctl: 'tctl'
 
   def get_teleport_users
     begin
@@ -20,10 +19,6 @@ Puppet::Type.type(:teleport_user).provide(:ruby) do
     end
     return users
   end
-
-  #def return_allowed_logins
-  #  resource[:allowed_logins].join(',') unless resource[:allowed_logins].nil?
-  #end
 
   def allowed_logins
     resource[:allowed_logins].join(',') unless resource[:allowed_logins].nil?

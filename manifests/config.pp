@@ -4,13 +4,11 @@
 #
 # == Parameters
 #
-# [*config_path*]
-#   Path to teleport config file
+# [*$teleport::config_path*]
+# Path to teleport config file
 #
 class teleport::config {
-
   if $teleport::init_style {
-
     case $teleport::init_style {
       'systemd': {
         file { '/lib/systemd/system/teleport.service':
@@ -18,10 +16,10 @@ class teleport::config {
           owner   => 'root',
           group   => 'root',
           content => template('teleport/teleport.systemd.erb'),
-        }~>
-        exec { 'teleport-systemd-reload':
+        }
+        ~> exec { 'teleport-systemd-reload':
           command     => 'systemctl daemon-reload',
-          path        => [ '/usr/bin', '/bin', '/usr/sbin' ],
+          path        => ['/usr/bin', '/bin', '/usr/sbin'],
           refreshonly => true,
         }
       }
@@ -30,7 +28,7 @@ class teleport::config {
           mode    => '0555',
           owner   => 'root',
           group   => 'root',
-          content => template('teleport/teleport.init.erb')
+          content => template('teleport/teleport.init.erb'),
         }
       }
       default: { fail('OS not supported') }
@@ -38,12 +36,11 @@ class teleport::config {
   }
 
   file { $teleport::config_path:
-    ensure  => present,
+    ensure  => file,
     owner   => 'root',
     group   => 'root',
     mode    => '0555',
     notify  => Service['teleport'],
-    content => template('teleport/teleport.yaml.erb')
+    content => template('teleport/teleport.yaml.erb'),
   }
-
 }

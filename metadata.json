@@ -1,47 +1,62 @@
 {
-  "name": "jaxxstorm-teleport",
-  "version": "0.1.0",
-  "author": "jaxxstorm",
+  "name": "thiagolinhares-teleport",
+  "version": "1.0.1",
+  "author": "thiagolinhares",
   "summary": "Install, manage and configure teleport by gravitational",
   "license": "MIT",
-  "source": "https://github.com/jaxxstorm/puppet-teleport",
-  "project_page": "https://github.com/jaxxstorm/puppet-teleport",
-  "issues_url": "https://github.com/jaxxstorm/puppet-teleport/issues",
-  "tags": [
-    "teleport",
-    "ssh",
-    "cluster"
+  "source": "https://github.com/thiagolinhares/puppet-teleport",
+  "project_page": "https://github.com/thiagolinhares/puppet-teleport",
+  "issues_url": "https://github.com/thiagolinhares/puppet-teleport/pulls",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=4.13.0 <8.1.0"
+    },
+    {
+      "name": "puppet/archive",
+      "version_requirement": ">=6.0.2 <9.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "6",
-        "7"
+        "7",
+        "8",
+        "8.5",
+        "8.6",
+        "8.7",
+        "8.8",
+        "8.9"
       ]
     },
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "6",
-        "7"
+        "7",
+        "8",
+        "8.5",
+        "8.6",
+        "8.7",
+        "8.8",
+        "8.9"
       ]
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">=3.3.0 <5.0.0"
-    },
-    {
-      "name": "pe",
-      "version_requirement": ">=3.7.0 < 2015.3.0"
+      "version_requirement": ">=5.0.0 <7.16.0"
     }
   ],
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">=3.2.0 <5.0.0"
-    }
-  ]
+  "tags": [
+    "teleport",
+    "ssh",
+    "cluster"
+  ],
+  "pdk-version": "2.5.0",
+  "template-url": "pdk-default#2.5.0",
+  "template-ref": "tags/2.5.0-0-g369d483"
 }
