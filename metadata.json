@@ -1,6 +1,6 @@
 {
   "name": "thiagolinhares-teleport",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "thiagolinhares",
   "summary": "Install, manage and configure teleport by gravitational",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">=4.13.0 <8.1.0"
+      "version_requirement": ">=4.13.0 <=8.2.0"
     },
     {
       "name": "puppet/archive",
