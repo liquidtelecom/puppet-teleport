@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"name": "teleport",
+			"name": "puppet-teleport",
 			"path": "."
 		}
 	],
