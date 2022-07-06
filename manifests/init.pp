@@ -151,7 +151,7 @@
 #  The provisioning tokens for the auth tokens
 #  Defaults to an empty array
 #
-# [*ssh_enable*]
+# [*  enable*]
 #  Whether to start SSH service
 #  Defaults to true
 #

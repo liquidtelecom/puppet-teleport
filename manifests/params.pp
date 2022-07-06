@@ -18,6 +18,11 @@ class teleport::params {
       name    => 'arch',
       command => '[uname, -p]',
       period  => '1h0m0s',
+    },
+    {
+      name    => 'shortname',
+      command => '[hostname, -s]',
+      period  => '1h0m0s',
   }]
   $ssh_permit_user_env      = false
   $proxy_tunnel_listen_addr = '127.0.0.1'
