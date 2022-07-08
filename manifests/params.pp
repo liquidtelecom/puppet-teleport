@@ -29,7 +29,7 @@ class teleport::params {
   $proxy_tunnel_listen_port = 3024
 
   case $facts['os']['name'] {
-    'RedHat', 'CentOS': {
+    'RedHat', 'CentOS', 'Rocky': {
       if versioncmp($facts['os']['release']['full'], '7.0') < 0 {
         $init_style  = 'init'
       } else {
