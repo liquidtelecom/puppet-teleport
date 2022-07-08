@@ -5,5 +5,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"puppet.editorService.puppet.version": "6.27.0"
+	}
 }

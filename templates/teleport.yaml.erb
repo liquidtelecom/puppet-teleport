@@ -163,8 +163,10 @@ app_service:
 <% end -%>
 <% unless ! app['commands'] -%>
     commands:
-<% app['commands'].each do | key, value | -%>
-      <%= key -%>: <%= value %>
+<% app['commands'].flatten.each do |command| -%>
+    - name: <%= command['name'] %>
+      command: <%= command['command'] %>
+      period: <%= command['period'] %>
 <% end -%>
 <% end -%>
 <% end -%>

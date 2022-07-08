@@ -361,11 +361,13 @@
 #  { 
 #   name => "shablau-app-dash",
 #   uri => 'http://8.8.8.8:1235',
-#   commands => {
-#               name => "os"
-#               command: ["/usr/bin/uname"]
-#               period: "5s"
+#   commands => [
+#               {
+#                 name => "os"
+#                 command: ["/usr/bin/uname"]
+#                 period: "5s"
 #               },
+#               ]
 #  },
 # ]
 #
