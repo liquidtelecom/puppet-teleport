@@ -71,7 +71,7 @@ auth_service:
 <% unless scope.lookupvar('teleport::auth_service_tokens').empty? -%>
   tokens:
 <% scope.lookupvar('teleport::auth_service_tokens').flatten.each do |token| -%>
-    - <%= token %>
+  - <%= token %>
 <% end -%>
 <% end -%>
 <% unless [:undef, nil].include?(scope.lookupvar('teleport::auth_cluster_name')) -%>
