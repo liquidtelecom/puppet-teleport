@@ -3,12 +3,12 @@
 # This class is meant to be called from the main class
 # It sets variables according to platform
 class teleport::params {
-  $version                  = '9.3.9'
+  $version                  = '14.3.3'
   $archive_path             = '/tmp/teleport.tar.gz'
   $bin_dir                  = '/usr/local/bin'
   $assets_dir               = '/usr/local/share/teleport'
   $config_path              = '/etc/teleport.yaml'
-  $nodename                 = $facts['networking']['hostname']
+  $nodename                 = $facts['fqdn']
   $auth_type                = 'local'
   $auth_second_factor       = 'otp'
   $auth_u2f_app_id          = 'https://localhost:3080'
