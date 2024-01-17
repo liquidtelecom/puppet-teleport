@@ -127,8 +127,13 @@
 #  Path to config file for teleport
 #  Defaults to /etc/teleport.yaml
 #
-# [*auth_servers*]
-#  An array of auth servers to connect to
+# [*auth_server*]
+#  An auth server to connect to
+#  Define this OR proxy_server but not both
+#
+# [*proxy_server*]
+#  An auth server to connect to
+#  Define this OR auth_server but not both
 #
 # [*auth_enable*]
 #  Whether to start the auth service
@@ -411,7 +416,8 @@ class teleport (
   String            $config_path                = $teleport::params::config_path,
   Optional[String]  $cluster_name               = undef,
   String            $proxy_protocol             = 'on',
-  Array             $auth_servers               = ['127.0.0.1:3025'],
+  String            $auth_server                = undef,
+  String            $proxy_server                = '127.0.0.1:443',
   Boolean           $auth_enable                = false,
   String            $auth_listen_addr           = '127.0.0.1',
   Integer           $auth_listen_port           = 3025,
@@ -465,7 +471,6 @@ class teleport (
   String            $service_ensure             = 'running',
   Boolean           $service_enable             = true
 ) inherits teleport::params {
-  validate_legacy(Array, 'validate_array', $auth_servers)
   validate_legacy(Array, 'validate_array', $ssh_label_commands)
   validate_legacy(Array, 'validate_array', $auth_u2f_facets)
   validate_legacy(Hash, 'validate_hash', $storage_options)

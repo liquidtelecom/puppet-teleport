@@ -1,5 +1,5 @@
 ---
-version: v2
+version: v3
 teleport:
   nodename: <%= scope.lookupvar('teleport::nodename') %>
 <% if ![:undef, nil].include?(scope.lookupvar('teleport::data_dir')) -%>
@@ -14,9 +14,11 @@ teleport:
 <% if ![:undef, nil].include?(scope.lookupvar('teleport::advertise_ip')) -%>
   advertise_ip: <%= scope.lookupvar('teleport::advertise_ip') %>
 <% end -%>
-  auth_servers:
-<% scope.lookupvar('teleport::auth_servers').flatten.each do |server| -%>
-    - <%= server %>
+<% if ![:undef, nil].include?(scope.lookupvar('teleport::auth_server')) -%>
+  auth_server: <%= scope.lookupvar('teleport::auth_server') %>
+<% end -%>
+<% if ![:undef, nil].include?(scope.lookupvar('teleport::proxy_server')) -%>
+  proxy_server: <%= scope.lookupvar('teleport::proxy_server') %>
 <% end -%>
   connection_limits:
     max_connections: <%= scope.lookupvar('teleport::max_connections') %>
