@@ -403,7 +403,7 @@ class teleport (
   Optional[String]  $auth_cluster_name          = $teleport::params::auth_cluster_name,
   Optional[String]  $data_dir                   = undef,
   Optional[String]  $ca_pin                     = undef,
-  Optional[String]  $auth_token                 = undef,
+  $auth_token                                   = undef,
   Optional[String]  $advertise_ip               = undef,
   Optional[String]  $storage_backend            = undef,
   Hash              $storage_options            = {},
