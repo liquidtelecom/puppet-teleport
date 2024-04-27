@@ -3,7 +3,7 @@
 # This class is meant to be called from the main class
 # It sets variables according to platform
 class teleport::params {
-  $version                  = '15.2.4'
+  $version                  = '15.2.5'
   $archive_path             = '/tmp/teleport.tar.gz'
   $bin_dir                  = '/usr/local/bin'
   $assets_dir               = '/usr/local/share/teleport'
