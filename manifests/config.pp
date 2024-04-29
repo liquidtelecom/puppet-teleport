@@ -23,7 +23,7 @@ class teleport::config {
           refreshonly => true,
         }
       }
-      'init': {
+      'redhat': {
         file { '/etc/init.d/teleport':
           mode    => '0555',
           owner   => 'root',
