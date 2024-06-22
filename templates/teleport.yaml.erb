@@ -67,7 +67,7 @@ auth_service:
       disabled: <%= scope.lookupvar('teleport::auth_webauthn_disabled') %>
 <% end -%>
   listen_addr: <%= scope.lookupvar('teleport::auth_listen_addr') -%>:<%= scope.lookupvar('teleport::auth_listen_port') %>
-<% if ![:undef, nil].include?(scope.lookupvar('teleport::public_address')) -%>
+<% if ![:undef, nil].include?(scope.lookupvar('teleport::auth_public_addr')) -%>
   public_address: <%= scope.lookupvar('teleport::auth_public_addr') -%>:<%= scope.lookupvar('teleport::auth_public_port') %>
 <% end -%>
 <% unless scope.lookupvar('teleport::auth_service_tokens').empty? -%>
