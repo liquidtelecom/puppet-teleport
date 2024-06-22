@@ -468,23 +468,9 @@ class teleport (
   Array             $app_apps                   = [],
   String            $init_style                 = $teleport::params::init_style,
   Boolean           $manage_service             = true,
-  String            $service_ensure             = 'running',
+  Enum['stopped', 'running']            $service_ensure             = 'running',
   Boolean           $service_enable             = true
 ) inherits teleport::params {
-  validate_legacy(Array, 'validate_array', $ssh_label_commands)
-  validate_legacy(Array, 'validate_array', $auth_u2f_facets)
-  validate_legacy(Hash, 'validate_hash', $storage_options)
-  validate_legacy(Boolean, 'validate_bool', $auth_enable)
-  validate_legacy(Boolean, 'validate_bool', $ssh_permit_user_env)
-  validate_legacy(Boolean, 'validate_bool', $ssh_enable)
-  validate_legacy(Hash, 'validate_hash', $labels)
-  validate_legacy(Boolean, 'validate_bool', $proxy_enable)
-  validate_legacy(Boolean, 'validate_bool', $proxy_ssl)
-  validate_legacy(Boolean, 'validate_bool', $manage_service)
-  validate_legacy('Optional[String]', 'validate_re', $service_ensure, '^(running|stopped)$')
-  validate_legacy(Boolean, 'validate_bool', $service_enable)
-  validate_legacy(Array, 'validate_array', $auth_service_tokens)
-  validate_legacy(Array, 'validate_array', $log_extra_fields)
 
   anchor { 'teleport_first': }
   -> class { 'teleport::install': }
