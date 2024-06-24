@@ -21,6 +21,7 @@ class teleport::config {
           command     => 'systemctl daemon-reload',
           path        => ['/usr/bin', '/bin', '/usr/sbin'],
           refreshonly => true,
+          notify  => Service['teleport'],
         }
       }
       'init': {
