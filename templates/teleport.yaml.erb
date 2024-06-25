@@ -2,6 +2,9 @@
 version: v3
 teleport:
   nodename: <%= scope.lookupvar('teleport::nodename') %>
+<% if ![:undef, nil].include?(scope.lookupvar('teleport::diag_addr')) -%>
+  diag_addr: <%= scope.lookupvar('teleport::diag_addr') %>
+<% end -%>
 <% if ![:undef, nil].include?(scope.lookupvar('teleport::data_dir')) -%>
   data_dir: <%= scope.lookupvar('teleport::data_dir') %>
 <% end -%>

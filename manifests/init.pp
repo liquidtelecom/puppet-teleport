@@ -409,6 +409,7 @@ class teleport (
   Hash              $storage_options            = {},
   Integer           $max_connections            = 1000,
   Integer           $max_users                  = 250,
+  Optional[String]  $diag_addr                  = undef,
   String            $log_dest                   = 'stderr',
   String            $log_level                  = 'ERROR',
   String            $log_output                 = 'text',
