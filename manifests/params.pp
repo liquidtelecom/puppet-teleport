@@ -34,6 +34,7 @@ class teleport::params {
         fail('OS is currently not supported')
       } else {
         $init_style  = 'systemd'
+        $systemd_path = '/lib/systemd/system/teleport.service'
       }
     }
     'Debian': {
@@ -41,6 +42,7 @@ class teleport::params {
         fail('OS is currently not supported')
       } else {
         $init_style = 'systemd'
+        $systemd_path = '/lib/systemd/system/teleport.service'
       }
     }
     'Ubuntu': {
@@ -48,6 +50,7 @@ class teleport::params {
         fail('OS is currently not supported')
       } else {
         $init_style = 'systemd'
+        $systemd_path = '/lib/systemd/system/teleport.service'
       }
     }
     'SLES': {
@@ -55,6 +58,7 @@ class teleport::params {
         fail('OS is currently not supported')
       } else {
         $init_style = 'systemd'
+        $systemd_path = '/usr/lib/systemd/system/teleport.service'
       }
     }
     default: { fail('Unsupported OS') }

@@ -468,6 +468,7 @@ class teleport (
   Boolean           $app_debug                  = false,
   Array             $app_apps                   = [],
   String            $init_style                 = $teleport::params::init_style,
+  String            $systemd_path               = $teleport::params::systemd_path,
   Boolean           $manage_service             = true,
   Enum['stopped', 'running']            $service_ensure             = 'running',
   Boolean           $service_enable             = true

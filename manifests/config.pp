@@ -11,7 +11,7 @@ class teleport::config {
   if $teleport::init_style {
     case $teleport::init_style {
       'systemd': {
-        file { '/lib/systemd/system/teleport.service':
+        file { $teleport::systemd_path:
           mode    => '0644',
           owner   => 'root',
           group   => 'root',
