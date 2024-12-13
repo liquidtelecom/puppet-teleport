@@ -50,6 +50,13 @@ class teleport::params {
         $init_style = 'systemd'
       }
     }
+    'SLES': {
+      if versioncmp($facts['os']['release']['major'], '15') < 0 {
+        fail('OS is currently not supported')
+      } else {
+        $init_style = 'systemd'
+      }
+    }
     default: { fail('Unsupported OS') }
   }
 }
