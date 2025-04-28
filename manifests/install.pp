@@ -52,10 +52,10 @@ class teleport::install {
         target => "/opt/teleport/system/bin/fdpass-teleport";
       "${teleport::bin_dir}/teleport-update":
         ensure => link,
-        target => "/opt/teleport/system/bin/teleport-update;
+        target => "/opt/teleport/system/bin/teleport-update";
       "${teleport::bin_dir}/tbot":
         ensure => link,
-        target => "/opt/teleport/system/bin/tbot;
+        target => "/opt/teleport/system/bin/tbot";
       "${teleport::bin_dir}/tctl":
         ensure => link,
         target => "/opt/teleport/system/bin/tctl";
