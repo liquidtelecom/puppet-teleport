@@ -4,7 +4,7 @@
 class teleport::install {
 
   exec { 'dummy-teleport-notify':
-    command => "/bin/true"
+    command => "/bin/true",
     refreshonly => true,  
   }
 
