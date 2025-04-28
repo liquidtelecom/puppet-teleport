@@ -61,6 +61,7 @@ class teleport::install {
         target => "/opt/teleport/system/bin/tctl";
       "${teleport::bin_dir}/teleport":
         ensure => link,
+        notify => Exec['dummy-teleport-notify'],
         target => "/opt/teleport/system/bin/teleport";
       "${teleport::bin_dir}/tsh":
         ensure => link,
