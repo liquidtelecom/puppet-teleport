@@ -5,7 +5,7 @@
 class teleport::params {
   $version                  = '17.4.6'
   $release_channel          = 'stable/v17'
-  $install_method           = 'repo' // archive or repo
+  $install_method           = 'repo' # archive or repo
   $archive_path             = '/tmp/teleport.tar.gz'
   $bin_dir                  = '/usr/local/bin'
   $assets_dir               = '/usr/local/share/teleport'
