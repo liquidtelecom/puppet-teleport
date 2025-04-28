@@ -27,7 +27,7 @@ class teleport::install {
         target => "${teleport::extract_path}/teleport/tctl";
       "${teleport::bin_dir}/teleport":
         ensure => link,
-        notify => Exec['dummy-teleport-notify],
+        notify => Exec['dummy-teleport-notify'],
         target => "${teleport::extract_path}/teleport/teleport";
       "${teleport::bin_dir}/tsh":
         ensure => link,
