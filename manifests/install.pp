@@ -42,7 +42,7 @@ class teleport::install {
 
     package { "teleport":
 		  ensure => $teleport::version,
-      notify => Exec['dummy-teleport-notify],
+      notify => Exec['dummy-teleport-notify'],
 	  }
 
   }
