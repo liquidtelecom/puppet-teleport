@@ -78,7 +78,7 @@ class teleport::repo (
                 name        => 'Gravitational Teleport Packages',
                 gpgcheck    => 1,
                 gpgkey      => "https://zypper.releases.teleport.dev/gpg",
-                // type        => 'rpm-md',
+                # type        => 'rpm-md',
               }
             
               # Workaround until zypprepo allows the adding of the keys
