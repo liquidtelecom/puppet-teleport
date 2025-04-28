@@ -41,7 +41,7 @@ class teleport::install {
     include teleport::repo
 
     package { "teleport":
-		  ensure => $teleport::version
+		  ensure => $teleport::version,
       notify => Exec['dummy-teleport-notify],
 	  }
 
