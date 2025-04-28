@@ -45,5 +45,29 @@ class teleport::install {
       notify => Exec['dummy-teleport-notify'],
 	  }
 
+    # cleanup logic for migration from archive to package
+    file {
+        "${teleport::bin_dir}/fdpass-teleport":
+        ensure => link,
+        target => "/opt/teleport/system/bin/fdpass-teleport";
+      "${teleport::bin_dir}/teleport-update":
+        ensure => link,
+        target => "/opt/teleport/system/bin/teleport-update;
+      "${teleport::bin_dir}/tbot":
+        ensure => link,
+        target => "/opt/teleport/system/bin/tbot;
+      "${teleport::bin_dir}/tctl":
+        ensure => link,
+        target => "/opt/teleport/system/bin/tctl";
+      "${teleport::bin_dir}/teleport":
+        ensure => link,
+        target => "/opt/teleport/system/bin/teleport";
+      "${teleport::bin_dir}/tsh":
+        ensure => link,
+        target => "/opt/teleport/system/bin/tsh";
+      $teleport::assets_dir:
+        ensure => absent,
+    }
+
   }
 }
