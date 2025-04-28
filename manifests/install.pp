@@ -38,7 +38,7 @@ class teleport::install {
     }
   } else {
 
-    include teleport::repo
+    require teleport::repo
 
     package { "teleport":
 		  ensure => $teleport::version,
