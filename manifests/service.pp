@@ -9,7 +9,7 @@ class teleport::service {
       ensure    => $teleport::service_ensure,
       enable    => $teleport::service_enable,
       provider  => $teleport::init_style,
-      subscribe => File["${teleport::bin_dir}/teleport"],
+      ssubscribe => Exec['dummy-teleport-notify'],
     }
   }
 }

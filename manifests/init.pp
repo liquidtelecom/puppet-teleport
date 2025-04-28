@@ -390,6 +390,8 @@
 #  Whether the service should be enabled on startup
 #
 class teleport (
+  String            $install_method             = $teleport::params::install_method,
+  String            $release_channel            = $teleport::params::release_channel,
   String            $version                    = $teleport::params::version,
   String            $archive_path               = $teleport::params::archive_path,
   String            $extract_path               = "/opt/teleport-${version}",
