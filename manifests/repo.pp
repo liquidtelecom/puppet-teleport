@@ -52,6 +52,7 @@ class teleport::repo (
                  'src' => false,
                  'deb' => true,
                 },
+                notify => Class['apt::update'],
               }              
 
         }
@@ -66,6 +67,7 @@ class teleport::repo (
                  'src' => false,
                  'deb' => true,
                 },
+                notify => Class['apt::update'],
               }  
 
         }
