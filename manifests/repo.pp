@@ -45,7 +45,10 @@ class teleport::repo (
 
             apt::source { "teleport":
                 location => 'https://apt.releases.teleport.dev/debian',
-                key      => '0C5E8BA5658E320D1B031179C87ED53A6282C411',
+                key      => {
+                  'name' => 'teleport.gpg',
+                  'source' => 'https://apt.releases.teleport.dev/gpg'
+                },
                 repos    => "${release_channel}",
                 release  => "${facts['os']['distro']['codename']}",
                 include  => {
@@ -60,8 +63,10 @@ class teleport::repo (
 
             apt::source { "teleport":
                 location => 'https://apt.releases.teleport.dev/ubuntu',
-                key      => '0C5E8BA5658E320D1B031179C87ED53A6282C411',
-                repos    => "${release_channel}",
+                key      => {
+                  'name' => 'teleport.gpg',
+                  'source' => 'https://apt.releases.teleport.dev/gpg'
+                },                repos    => "${release_channel}",
                 release  => "${facts['os']['distro']['codename']}",
                 include  => {
                  'src' => false,
