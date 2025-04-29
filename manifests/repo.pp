@@ -66,7 +66,8 @@ class teleport::repo (
                 key      => {
                   'name' => 'teleport.gpg',
                   'source' => 'https://apt.releases.teleport.dev/gpg'
-                },                repos    => "${release_channel}",
+                },                
+                repos    => "${release_channel}",
                 release  => "${facts['os']['distro']['codename']}",
                 include  => {
                  'src' => false,
