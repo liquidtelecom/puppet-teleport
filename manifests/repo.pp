@@ -44,13 +44,14 @@ class teleport::repo (
         'Debian': {
 
             apt::source { "teleport":
-                location => 'https://apt.releases.teleport.dev/debian',
+                source_format => 'sources',
+                location => ['https://apt.releases.teleport.dev/debian'],
                 key      => {
-                  'name' => 'teleport.gpg',
+                  'filename' => '/etc/apt/trusted.gpg.d/teleport-archive-keyring.asc',
                   'source' => 'https://apt.releases.teleport.dev/gpg'
                 },
-                repos    => "${release_channel}",
-                release  => "${facts['os']['distro']['codename']}",
+                repos    => ["${release_channel}"],
+                release  => ["${facts['os']['distro']['codename']}"],
                 include  => {
                  'src' => false,
                  'deb' => true,
