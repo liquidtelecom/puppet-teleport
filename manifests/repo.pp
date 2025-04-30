@@ -44,7 +44,7 @@ class teleport::repo (
         source_format => 'sources',
         location => ['https://apt.releases.teleport.dev/debian'],
         key   => {
-          'filename' => '/etc/apt/trusted.gpg.d/teleport-archive-keyring.asc',
+          'name' => 'teleport-archive-keyring.asc',
           'source' => 'https://apt.releases.teleport.dev/gpg',
         },
         repos  => ["${release_channel}"],
@@ -62,7 +62,7 @@ class teleport::repo (
         source_format => 'sources',
         location => 'https://apt.releases.teleport.dev/ubuntu',
         key   => {
-          'filename' => '/etc/apt/trusted.gpg.d/teleport-archive-keyring.asc',
+          'name' => 'teleport-archive-keyring.asc',
           'source' => 'https://apt.releases.teleport.dev/gpg',
         },
         repos  => "${release_channel}",
