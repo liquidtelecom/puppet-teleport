@@ -11,7 +11,7 @@ ExecStart=<%= scope.lookupvar('teleport::bin_dir') %>/teleport start --config <%
 # systemd before 239 needs an absolute path
 ExecReload=/bin/sh -c "exec pkill -HUP -L -F /run/teleport.pid"
 PIDFile=/run/teleport.pid
-LimitNOFILE=8192
+LimitNOFILE=524288
 
 [Install]
 WantedBy=multi-user.target
