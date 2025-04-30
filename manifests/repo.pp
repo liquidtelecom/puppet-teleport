@@ -60,13 +60,15 @@ class teleport::repo (
     }
     'Ubuntu': {
 
+      apt::keyring { 'teleport-keyring.asc':
+        source => 'https://apt.releases.teleport.dev/gpg',
+        dir    => '/etc/apt/trusted.gpg.d',
+      }
+
       apt::source { "teleport":
         source_format => 'sources',
         location => 'https://apt.releases.teleport.dev/ubuntu',
-        key   => {
-          'name' => 'teleport-archive-keyring.asc',
-          'source' => 'https://apt.releases.teleport.dev/gpg',
-        },
+        keyring   => '/etc/apt/trusted.gpg.d/teleport-keyring.asc',
         repos  => "${release_channel}",
         release => "${facts['os']['distro']['codename']}",
         include => {
