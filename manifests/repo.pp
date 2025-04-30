@@ -42,6 +42,7 @@ class teleport::repo (
 
       apt::keyring { 'teleport-keyring.gpg':
         source => 'https://apt.releases.teleport.dev/gpg',
+        dir    => '/etc/apt/trusted.gpg.d/',
       }
 
       apt::source { "teleport":
