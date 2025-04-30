@@ -40,7 +40,7 @@ class teleport::repo (
     }
     'Debian': { 
 
-      apt::keyring { 'teleport-keyring.gpg':
+      apt::keyring { 'teleport-keyring.asc':
         source => 'https://apt.releases.teleport.dev/gpg',
         dir    => '/etc/apt/trusted.gpg.d',
       }
@@ -48,7 +48,7 @@ class teleport::repo (
       apt::source { "teleport":
         source_format => 'sources',
         location => ['https://apt.releases.teleport.dev/debian'],
-        keyring   => '/etc/apt/trusted.gpg.d/teleport-keyring.gpg',
+        keyring   => '/etc/apt/trusted.gpg.d/teleport-keyring.asc',
         repos  => ["${release_channel}"],
         release => ["${facts['os']['distro']['codename']}"],
         include => {
