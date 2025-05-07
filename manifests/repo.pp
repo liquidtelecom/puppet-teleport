@@ -31,7 +31,7 @@ class teleport::repo (
     'Rocky': { 
 
       yumrepo { 'teleport':
-        baseurl => "https://yum.releases.teleport.dev/rocky/${facts['os']['release']['major']}/Teleport/${facts['os']['architecture']}/${release_channel}",
+        baseurl => "https://yum.releases.teleport.dev/rhel/${facts['os']['release']['major']}/Teleport/${facts['os']['architecture']}/${release_channel}",
         descr  => 'Gravitational Teleport packages',
         enabled => 1,
         gpgcheck => 1,
