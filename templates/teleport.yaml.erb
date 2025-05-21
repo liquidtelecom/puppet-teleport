@@ -177,3 +177,21 @@ app_service:
 <% end -%>
 <% end -%>
 <% end -%>
+windows_desktop_service:
+  enabled: <%= scope.lookupvar('teleport::windowsdesktop_enable') %>
+<% unless ! scope.lookupvar('teleport::windowsdesktop_enable') -%>
+<% unless scope.lookupvar('teleport::windowsdesktop_statichosts').empty? -%>
+  apps:
+<% scope.lookupvar('teleport::windowsdesktop_statichosts').flatten.each do |statichost| -%>
+  - name: <%= statichost['name'] %>
+    ad: <%= statichost['ad'] %>
+    addr: <%= statichost['addr'] %>
+<% unless ! statichost['labels'] -%>
+    labels:
+<% statichost['labels'].each do | key, value | -%>
+      <%= key -%>: <%= value %>
+<% end -%>
+<% end -%>
+<% end -%>
+<% end -%>
+<% end -%>

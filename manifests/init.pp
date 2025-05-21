@@ -469,6 +469,8 @@ class teleport (
   Boolean           $app_enable                 = false,
   Boolean           $app_debug                  = false,
   Array             $app_apps                   = [],
+  Boolean           $windowsdesktop_enable      = false,
+  Array             $windowsdesktop_statichosts = [],
   String            $init_style                 = $teleport::params::init_style,
   String            $systemd_path               = $teleport::params::systemd_path,
   Boolean           $manage_service             = true,
